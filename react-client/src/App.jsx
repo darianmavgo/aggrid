@@ -1,7 +1,9 @@
 import React, { useState, useMemo, useCallback } from 'react';
 import { AgGridReact } from 'ag-grid-react'; 
 import { ModuleRegistry, AllCommunityModule } from 'ag-grid-community'; 
-import { themeAlpine } from 'ag-grid-community';
+import 'ag-grid-community/styles/ag-grid.css';
+import 'ag-grid-community/styles/ag-theme-alpine.css';
+
 ModuleRegistry.registerModules([ AllCommunityModule ]);
 
 import './index.css';
@@ -80,6 +82,7 @@ const App = () => {
     <div style={containerStyle}>
         <div className="ag-theme-alpine-dark" style={gridStyle}>
           <AgGridReact
+            theme="legacy"
             columnDefs={colDefs}
             defaultColDef={defaultColDef}
             rowModelType={'infinite'}
